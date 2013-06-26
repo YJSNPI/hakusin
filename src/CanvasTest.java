@@ -20,16 +20,16 @@ class MyCan extends Canvas{
         });
     }
 
-    Image offScreenImage;
-    Graphics offScreenGraphics;
+    Image offImage;
+    Graphics offGraphics;
 
     public void update(Graphics g){
-        if(offScreenImage==null){
-            offScreenImage=createImage(600,400);
-            offScreenGraphics=offScreenImage.getGraphics();
+        if(offImage==null){
+            offImage=createImage(600,400);
+            offGraphics=offImage.getGraphics();
         }
-        paint(offScreenGraphics);
-        g.drawImage(offScreenImage,0,0,this);
+        paint(offGraphics);
+        g.drawImage(offImage,0,0,this);
     }
 
     public void paint(Graphics g){
