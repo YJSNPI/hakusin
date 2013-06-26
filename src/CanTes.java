@@ -49,7 +49,7 @@ class CanTes extends Frame{
     CanTes(){
         super(" ");
         this.addWindowListener(new MyWin());
-        add(Can=new MyCan(),"South");
+        add(Can=new MyCan());
         setSize(getPreferredSize());
         setVisible(true);
     }
