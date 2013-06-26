@@ -37,22 +37,21 @@ class MyCan extends Canvas{
 }
 
 class CanvasTest extends Frame{
-    MyCan myCan;
+    MyCan Can;
     class MyWin extends WindowAdapter{
         public void windowClosing(WindowEvent e){
             System.exit(0);
         }
     }
-
     CanvasTest(){
         super(" ");
         this.addWindowListener(new MyWin());
-        add(myCan=new MyCan(),"South");
+        add(Can=new MyCan(),"South");
         setSize(getPreferredSize());
         setVisible(true);
     }
 
-    public static void main(String args[]) {
+    static{
         new CanvasTest();
     }
 }
