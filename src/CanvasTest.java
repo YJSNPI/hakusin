@@ -94,6 +94,6 @@ class CanvasTest extends Frame{
 	}
 
 	public static void main(String args[]) {
-		new CanvasTest();
+		  new CanvasTest();
 	}
 }
