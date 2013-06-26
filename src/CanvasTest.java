@@ -33,6 +33,11 @@ class MyCan extends Canvas{
             end_y = e.getY();
             repaint();
         }
+        public void mouseDragged(MouseEvent e) {
+            end_x = e.getX();
+            end_y = e.getY();
+            repaint();
+        }
     }
 }
 
