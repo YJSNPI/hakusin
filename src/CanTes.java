@@ -2,10 +2,10 @@ import java.awt.*;
 import java.awt.event.*;
 
 class MyCan extends Canvas{
-    int x,y;
     Image OI;
     Graphics OG;
     MouseEvent me;
+
     MyCan(){
         super();
         setSize(600,400);
@@ -34,14 +34,14 @@ class MyCan extends Canvas{
 }
 
 class CanTes extends Frame{
-    class MyWin extends WindowAdapter{
+    class MW extends WindowAdapter{
         public void windowClosing(WindowEvent e){
             System.exit(0);
         }
     }
     CanTes(){
         super("");
-        this.addWindowListener(new MyWin());
+        this.addWindowListener(new MW());
         add(new MyCan());
         setSize(getPreferredSize());
         setVisible(true);
