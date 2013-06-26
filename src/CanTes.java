@@ -22,8 +22,7 @@ class MyCan extends Canvas{
     }
 
     public void update(Graphics g){
-        OG=(OI=createImage(600,400)).getGraphics();
-        paint(OG);
+        paint(OG=(OI=createImage(600,400)).getGraphics());
         g.drawImage(OI,0,0,this);
     }
 
