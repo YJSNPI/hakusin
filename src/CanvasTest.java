@@ -26,7 +26,7 @@ class MyCan extends Canvas implements MouseMotionListener{
     g.setColor(Color.black);
     g.drawLine(300,200,end_x,end_y);
   }
-
+ 
   public void mouseMoved(MouseEvent e){
     end_x = e.getX();
     end_y = e.getY();
