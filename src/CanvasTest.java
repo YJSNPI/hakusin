@@ -2,11 +2,22 @@ import java.awt.*;
 import java.awt.event.*;
 
 class MyCan extends Canvas{
-    int end_x,end_y;
+    int ex,ey;
     public MyCan(){
         super();
         setSize(600,400);
-        addMouseMotionListener(new MML());
+        addMouseMotionListener(new MouseMotionListener() {
+            public void mouseDragged(MouseEvent e) {
+                ex = e.getX();
+                ey = e.getY();
+                repaint();
+            }
+            public void mouseMoved(MouseEvent e) {
+                ex = e.getX();
+                ey = e.getY();
+                repaint();
+            }
+        });
     }
 
     Image offScreenImage;
@@ -24,20 +35,7 @@ class MyCan extends Canvas{
     public void paint(Graphics g){
         g.clearRect(0,0,600,400);
         g.setColor(Color.black);
-        g.drawLine(300,200,end_x,end_y);
-    }
-
-    class MML extends MouseMotionAdapter{
-        public void mouseMoved(MouseEvent e){
-            end_x = e.getX();
-            end_y = e.getY();
-            repaint();
-        }
-        public void mouseDragged(MouseEvent e) {
-            end_x = e.getX();
-            end_y = e.getY();
-            repaint();
-        }
+        g.drawLine(300,200,ex,ey);
     }
 }
 
