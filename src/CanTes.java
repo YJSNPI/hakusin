@@ -3,25 +3,23 @@ import java.awt.event.*;
 
 class MyCan extends Canvas{
     int x,y;
+    Image OI;
+    Graphics OG;
+    MouseEvent me;
     MyCan(){
         super();
         setSize(600,400);
         addMouseMotionListener(new MouseMotionListener() {
             public void mouseDragged(MouseEvent e) {
-                x = e.getX();
-                y = e.getY();
+                me = e;
                 repaint();
             }
             public void mouseMoved(MouseEvent e) {
-                x = e.getX();
-                y = e.getY();
+                me = e;
                 repaint();
             }
         });
     }
-
-    Image OI;
-    Graphics OG;
 
     public void update(Graphics g){
         OI=createImage(600,400);
@@ -31,7 +29,7 @@ class MyCan extends Canvas{
     }
 
     public void paint(Graphics g){
-        g.drawLine(300,200,x,y);
+        g.drawLine(300,200,me.getX(),me.getY());
     }
 }
 
@@ -42,7 +40,7 @@ class CanTes extends Frame{
         }
     }
     CanTes(){
-        super(" ");
+        super("");
         this.addWindowListener(new MyWin());
         add(new MyCan());
         setSize(getPreferredSize());
