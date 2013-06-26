@@ -24,7 +24,6 @@ class MyCanvas extends Canvas{
 		lineColor=Color.black;
 		// GUI部品と，Event Listenerを関連づける
 		setSize(600,400);
-		addMouseListener(new ML());
 		addMouseMotionListener(new MML());
 	}
 
@@ -54,18 +53,6 @@ class MyCanvas extends Canvas{
 			g.drawLine(300,200,end_x,end_y);
 	}
 
-
-	class ML extends MouseAdapter{
-		// MouseListenerを実装するためのメソッド
-		public void mousePressed(MouseEvent e){
-			// 押された時のマウスカーソルの位置を得る
-			int mx=e.getX(),my=e.getY();
-			// ドラッグ中であることを示す
-			dragging=true;
-			// 再表示をおこなう
-			repaint();
-		}
-	}
 
 	class MML extends MouseMotionAdapter{
 		// MouseMotionListenerを実装するためのメソッド
