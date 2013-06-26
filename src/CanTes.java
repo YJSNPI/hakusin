@@ -31,14 +31,11 @@ class MyCan extends Canvas{
     }
 
     public void paint(Graphics g){
-        g.clearRect(0,0,600,400);
-        g.setColor(Color.red);
         g.drawLine(300,200,x,y);
     }
 }
 
 class CanTes extends Frame{
-    MyCan Can;
     class MyWin extends WindowAdapter{
         public void windowClosing(WindowEvent e){
             System.exit(0);
@@ -47,7 +44,7 @@ class CanTes extends Frame{
     CanTes(){
         super(" ");
         this.addWindowListener(new MyWin());
-        add(Can=new MyCan());
+        add(new MyCan());
         setSize(getPreferredSize());
         setVisible(true);
     }
