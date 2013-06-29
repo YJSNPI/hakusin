@@ -14,7 +14,6 @@ class CanTes extends Frame{
     class C extends Canvas{
         C(){
             x=y=t;
-            setSize(s,s);
             addMouseMotionListener(new MouseMotionListener(){
                 public void mouseDragged(MouseEvent e){
                     x=e.getX();y=e.getY();
